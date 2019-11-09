@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'signup', component:SignupComponent},
   {path:'profile', component:ProfileComponent},
-  {path:'editBlog/:blogid', component:EditblogComponent}
+  {path:'profile/editBlog/:blogid', component:EditblogComponent}
 
 ];
 

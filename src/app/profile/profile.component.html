@@ -103,8 +103,8 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">{{blog.body}}</h5>
-   <a class="btn btn-primary m-3" [routerLink]="['editBlog',blog.id]">Edit blog</a>
-    <button class="btn btn-danger m-3" (click)="delete(blog.id)">Delete blog</button>
+   <a class="btn btn-primary m-3" [routerLink]="['editBlog',blog.blogid]">Edit blog</a>
+    <button class="btn btn-danger m-3" (click)="delete(blog.blogid)">Delete blog</button>
   </div>
   <div class="card-footer text-muted" >
     {{blog.createDate | date:'medium'}}
