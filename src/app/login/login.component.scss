@@ -1,0 +1,105 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+  height: 150px;
+  background: #FFF;
+
+}
+
+.sidenav {
+  height: 100%;
+
+  background-color:#383838;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.main {
+  padding: 0px 10px;
+
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+    margin-top: 10%;
+  }
+
+  .register-form{
+    margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+    margin-left: 40%;
+  }
+
+  .sidenav{
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .login-form{
+    margin-top: 50%;
+    margin-left:45%;
+  }
+
+  .register-form{
+    margin-top: 20%;
+  }
+}
+
+
+.login-main-text{
+  margin-top: 40%;
+  padding: 60px;
+  color: #fff;
+  margin-left:60px;
+}
+
+.login-main-text h2{
+  font-weight: 300;
+}
+.p
+{
+  width:500px;
+  margin-left: 50px;
+}
+
+.btn-black{
+  background-color:#383838 !important;
+  color: #fff;
+}
+.i
+{
+  margin-left:230px;
+  margin-top: 10px;
+}
+.d
+{
+  margin-left:50px;
+}
+.h
+{
+  width:100%;
+}
+.u
+{
+  border-radius:20px;
+  width:500px;
+  margin-left:40px;
+
+}

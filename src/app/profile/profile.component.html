@@ -1,0 +1,113 @@
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="container-fluid bg-light">
+  <div class="row">
+    <div class="col-sm-12">
+      <br />
+      <br />
+      <br />
+      <h1 class="page-header text-dark " ><b><i class="fa fa-user" style="font-size:48px;color:black;"></i>&nbsp;My Profile</b></h1>
+      <hr class="bg-dark" />
+      <!-- <hr class=" text-light">-->
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="text-center">
+            <!--<img src="../../assets/images/usey.png" class="avatar rounded-circle img-thumbnail" alt="avatar">-->
+            <br />
+            <br />
+
+
+          </div>
+        </div>
+        <!-- edit form column -->
+        <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+
+          <h3 class="text-dark"><u>Personal info</u></h3>
+          <br />
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-3 control-label text-dark">Username:</label>
+              <div class="col-lg-8">
+                <input class="form-control" [(ngModel)]="myprod.username" value="{{myprod.username}}" name="username" type="text" >
+              </div>
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+              <label class="col-md-3 control-label text-dark">Password:</label>
+              <div class="col-md-8">
+                <input class="form-control" value="{{myprod.password}}" type="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label text-dark">Email:</label>
+              <div class="col-md-8">
+                <input class="form-control" [(ngModel)]="myprod.email" value="{{myprod.email}}" name="ema"type="text">
+              </div>
+            </div>
+            <!--  <div class="form-group">
+                <label class="col-md-3 control-label text-light">Confirm password:</label>
+                <div class="col-md-8">
+                  <input class="form-control" value="11111122333" type="password">
+                </div>
+              </div>-->
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-8">
+                <input class="btn btn-primary" value="Edit Changes" type="button"(click)="edit()">
+                <span>&nbsp;&nbsp;</span>
+                <!--  <input class="btn btn-default btn btn-primary" value="Save Changes" type="reset">-->
+                <span> &nbsp;</span>
+                <button type="button" class="btn btn-primary" routerLink="/orderhistory">Show order history</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+       aria-controls="home" aria-selected="true">Timeline</a>
+  </li>
+
+</ul>
+
+
+
+
+
+<div class="card text-center mb-3" *ngFor="let blog of blogs">
+  <div class="card-header" >
+    {{blog.title}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{blog.body}}</h5>
+   <a class="btn btn-primary m-3" [routerLink]="['editBlog',blog.id]">Edit blog</a>
+    <button class="btn btn-danger m-3" (click)="delete(blog.id)">Delete blog</button>
+  </div>
+  <div class="card-footer text-muted" >
+    {{blog.createDate | date:'medium'}}
+  </div>
+</div>
+
