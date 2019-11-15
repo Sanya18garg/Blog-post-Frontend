@@ -23,13 +23,14 @@
         <!-- left column -->
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="text-center">
-            <!--<img src="../../assets/images/usey.png" class="avatar rounded-circle img-thumbnail" alt="avatar">-->
+            <img src="../../assets/images/usey.png" class="avatar rounded-circle img-thumbnail" alt="avatar">
             <br />
             <br />
 
 
           </div>
         </div>
+
         <!-- edit form column -->
         <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
 
@@ -39,7 +40,7 @@
             <div class="form-group">
               <label class="col-lg-3 control-label text-dark">Username:</label>
               <div class="col-lg-8">
-                <input class="form-control" [(ngModel)]="myprod.username" value="{{myprod.username}}" name="username" type="text" >
+                <input class="form-control" [(ngModel)]="myprod.username" value="{{myprod.username}}" name="username" type="text" disabled>
               </div>
             </div>
 
@@ -51,8 +52,20 @@
             <div class="form-group">
               <label class="col-md-3 control-label text-dark">Password:</label>
               <div class="col-md-8">
-                <input class="form-control" value="{{myprod.password}}" type="password">
+                <input class="form-control"  name="pass"[(ngModel)]="myprod.password"value="{{myprod.password}}" type="password">
               </div>
+
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label text-dark">Status:</label>
+              <div class="col-md-8">
+                <select name="stat" class="custom-select" value="{{myprod.status}}" [(ngModel)]="myprod.status">
+                  <option value="private" selected>private</option>
+                  <option value="public">public</option>
+                </select>
+              </div>
+
             </div>
             <div class="form-group">
               <label class="col-md-3 control-label text-dark">Email:</label>
@@ -73,7 +86,7 @@
                 <span>&nbsp;&nbsp;</span>
                 <!--  <input class="btn btn-default btn btn-primary" value="Save Changes" type="reset">-->
                 <span> &nbsp;</span>
-                <button type="button" class="btn btn-primary" routerLink="/orderhistory">Show order history</button>
+               <!-- <button type="button" class="btn btn-primary" routerLink="/add">Add Blog</button>-->
               </div>
             </div>
           </form>
@@ -85,10 +98,33 @@
 
 
 </div>
+<div style="display: flex">
+<div class="card border-dark mb-3 " style="max-width: 18rem;margin-left:600px;">
+  <div class="card-header"><h5><b>Followers</b></h5></div>
+  <div class="card-body text-dark" *ngFor="let follow of followers">
+    <span class="card-title mr-2">@{{follow.username}}</span>
+    <button class="btn btn-outline-dark "  style="float:right"(click)="remove(follow.userId)"> Remove</button>
+  </div>
+</div>
+
+<div class="card border-dark mb-3 ml-5" style="max-width: 18rem; ">
+  <div class="card-header"><h5><b>Following</b></h5></div>
+  <div class="card-body text-dark" *ngFor="let follow of following">
+    <span class="card-title mr-2">@{{follow.username}}</span>
+    <button class="btn btn-outline-dark "  style="float:right"  (click)="unfollow(follow.userId)"> Unfollow</button>
+  </div>
+</div>
+</div>
+<div class="container bg-light">
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-       aria-controls="home" aria-selected="true">Timeline</a>
+       aria-controls="home" aria-selected="true"><b>My Blogs</b></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab1" data-toggle="tab" href="#home" role="tab"
+       aria-controls="home" aria-selected="true" routerLink="/add"><b>Add New Blog</b></a>
   </li>
 
 </ul>
@@ -98,16 +134,18 @@
 
 
 <div class="card text-center mb-3" *ngFor="let blog of blogs">
-  <div class="card-header" >
-    {{blog.title}}
+  <div class="card-header bg-dark text-light" >
+    <b> Blog Title:</b>  {{blog.title}}
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{blog.body}}</h5>
+    <h5 class="card-title "><b>Blog Body: </b> {{blog.body}}</h5>
    <a class="btn btn-primary m-3" [routerLink]="['editBlog',blog.blogid]">Edit blog</a>
-    <button class="btn btn-danger m-3" (click)="delete(blog.blogid)">Delete blog</button>
+    <button class="btn btn-success m-3" (click)="delete(blog.blogid)">Delete blog</button>
   </div>
-  <div class="card-footer text-muted" >
+  <div class="card-footer text-muted" >Created On:
     {{blog.createDate | date:'medium'}}
   </div>
+</div>
+
 </div>
 

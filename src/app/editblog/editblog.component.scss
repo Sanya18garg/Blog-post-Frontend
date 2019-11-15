@@ -1,5 +1,7 @@
 .bgcolr{
-  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+  //background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+
+  background:#383838;
 }
 
 .container-fluid {
@@ -40,7 +42,8 @@
   margin-bottom: 8%;
   margin-top: -10%;
   text-align: center;
-  color: #0062cc;
+  //color: #0062cc;
+  color:black;
 }
 .contact-form .btnContact {
   width: 50%;

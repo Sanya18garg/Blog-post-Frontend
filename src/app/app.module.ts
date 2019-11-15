@@ -12,6 +12,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditblogComponent } from './editblog/editblog.component';
+import { AddblogComponent } from './addblog/addblog.component';
+import { PeopleComponent } from './people/people.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { EditblogComponent } from './editblog/editblog.component';
     SignupComponent,
     HomeComponent,
     ProfileComponent,
-    EditblogComponent
+    EditblogComponent,
+    AddblogComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
