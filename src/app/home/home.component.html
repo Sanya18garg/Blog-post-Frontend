@@ -7,12 +7,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
-
-
-
-
-
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#"><b>My Blog</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +16,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/main">
+        <a class="nav-link" href="/home">
           <i class="fa fa-home"></i>
           Home
           <span class="sr-only">(current)</span>
@@ -47,10 +41,6 @@
       </li>
 
     </ul>
-   <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>-->
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" name="search" [(ngModel)]="value" type="text" placeholder="Search" (keyup)="searchUser(value)">
     </form>
@@ -79,9 +69,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-9 gedf-main">
-
-      <!--- \\\\\\\Post-->
+    <div class="col-md-5 gedf-main">
       <div class="card gedf-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
@@ -107,12 +95,7 @@
             </div>
 
           </div>
-          <!--<div class="btn-toolbar justify-content-between">
-            <select [(ngModel)]="status" name="status" class="btn-group">
-              <option value="private" >Private</option>
-              <option value="public">Public</option>
-            </select>
-          </div>-->
+
           <div class="form-group">
             <label class="col-md-3 control-label text-dark"></label>
             <div class="col-md-8">
@@ -180,35 +163,13 @@
           <button (click)="view(p.id)" class="card-link btn btn-light"><i class="fa fa-gittip"></i> </button>
         </div>
       </div>
-      <!-- Post /////-->
-
-
-      <!---right side cards....................-->
 
     </div>
-    <!--<div class="col-md-3">
-      <div class="card gedf-card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-      <div class="card gedf-card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-    </div>-->
-  </div>
+
+    </div>
+    <!------->
+
+    <!------->
 </div>
 </div>
   <div class="col-md-3">
@@ -224,3 +185,4 @@
 
   </div>
 </div>
+

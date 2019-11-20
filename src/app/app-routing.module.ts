@@ -10,10 +10,10 @@ import {PeopleComponent} from "./people/people.component";
 
 
 const routes: Routes = [
-
+  {path:'',redirectTo:'/signup',pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'home', component:HomeComponent},
-  {path:'signup', component:SignupComponent},
+  {path:'signup',component:SignupComponent},
   {path:'profile', component:ProfileComponent},
   {path:'profile/editBlog/:blogid', component:EditblogComponent},
   {path:'add',component:AddblogComponent},
